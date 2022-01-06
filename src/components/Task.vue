@@ -34,5 +34,7 @@ p {
 
 .task {
   background-color: lightyellow;
+  width: 98%;
+  margin: 0 auto;
 }
 </style>
