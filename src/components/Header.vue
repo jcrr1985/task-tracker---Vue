@@ -29,6 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: .5rem;
+    background: -webkit-linear-gradient(black,white,black);
 }
 </style>

@@ -1,23 +1,29 @@
 <template>
   <div class="container title">
     <Header title="Task Tracker" />
-    <Tasks
+    <div class="formy">
+      <Form  @add-task="addTask"/>
+    </div>
+  <div class="tasky">
+      <Tasks
       :tasks="tasks"
       @delete-task="delTask"
       @toggle-reminder="toggleReminder"
     />
+  </div>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
-
+import Form from "./components/Form"
 export default {
   name: "App",
   components: {
     Header,
     Tasks,
+    Form
   },
   data() {
     return {
@@ -32,6 +38,9 @@ export default {
     toggleReminder(id) {
       this.tasks = this.tasks.map( task => task.id == id ? {...task, reminder: !task.reminder} : task);
     },
+    addTask(task) {
+      this.tasks = [...this.tasks, task]
+    }
   },
   created() {
     this.tasks = [
@@ -65,12 +74,19 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 1.5%;
 }
 .container.title {
-  padding: 3rem;
   border: 1px solid #2c3e50;
-  max-width: 600px;
+  width: 70%;
   margin: 0 auto;
+}
+.container.title .formy{
+  background-color:#adcae7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container.title .tasky{
 }
 </style>
