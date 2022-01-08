@@ -1,9 +1,8 @@
 <template>
     <header>
         <h1>{{ title }}</h1>
-            <Button @click="onClick()" texto="Add Task" addColor="green"/>
+            <Button @click="toggleAddTaskSection" :texto="buttonState? 'close': 'Add New Task' " :addColor="buttonState ? 'red' : 'green'"/>
     </header>
-
 </template>
 
 <script>
@@ -12,13 +11,14 @@ import Button from './Button'
         name: 'Header',
         props: {
             title:String,
+            buttonState: Boolean,
         },
         components: {
             Button
         },
         methods: {
-            onClick() {
-                 console.log('anything')
+            toggleAddTaskSection() {
+                 this.$emit('toggle-add-task-section');
             }
         }
     }

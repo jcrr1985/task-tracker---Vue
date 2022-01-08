@@ -19,7 +19,6 @@
         font-size: 15px;
         cursor: pointer;
         padding: 10px 20px;
-        background-color:#333; 
         color: #fff;
     }
 </style>

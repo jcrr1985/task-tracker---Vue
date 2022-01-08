@@ -1,10 +1,16 @@
 <template>
   <div @dblclick="$emit('toggle-reminder', task.id)" class="task">
-    <h4 class="text">
-      {{ task.text }}
-      <em @click="$emit('delete-task', task.id)" class="fas fa-times"></em>
-    </h4>
-    <p>{{ task.day }}</p>
+    <div class="">
+      <h4 class="text">
+        {{ task.text }}
+        <em @click="$emit('delete-task', task.id)" class="fas fa-times"></em>
+      </h4>
+      <p>{{ task.day }}</p>
+    </div>
+    <div class="">
+      <input @change="changeImportance" type="checKbox" value="mandatory" :id="task.id" />
+      <label :for="task.id">Important</label>
+    </div>
   </div>
 </template>
 
@@ -14,8 +20,13 @@ export default {
   props: {
     task: Object,
   },
-  methods: {},
-};
+  methods: {
+      changeImportance(){
+          console.log('changeImportance', this.task.id)
+          this.$emit('changeImportance', this.task.id);
+      }
+  },
+  };
 </script>
 
 <style scoped>
@@ -36,5 +47,10 @@ p {
   background-color: lightyellow;
   width: 98%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 </style>
