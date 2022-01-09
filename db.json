@@ -1,22 +1,22 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Doctor's appointment",
-      "day": "March 1 at 4:00pm",
-      "reminder": true
-    },
-    {
       "id": 2,
       "text": "Walk the dog",
       "day": "March 2 at 6:00am",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": "457",
       "text": "ver una peli en 2 horas",
       "day": "hoy :D",
-      "reminder": true
+      "reminder": false
+    },
+    {
+      "id": 999,
+      "text": "test 1979",
+      "day": "1979",
+      "reminder": false
     }
   ]
 }
